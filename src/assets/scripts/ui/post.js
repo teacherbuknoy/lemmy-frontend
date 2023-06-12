@@ -1,4 +1,4 @@
-const { toRelativeTime } = require('../utils/time')
+const { toRelativeTime, toReadableTime } = require('../utils/time')
 
 class UIPost {
   post = document.createElement('article')
@@ -45,7 +45,7 @@ class UIPost {
     const date = new Date(value)
     const timestamp = this.post.querySelector('[data-post=timestamp]')
     timestamp.setAttribute('datetime', date.toISOString())
-    timestamp.innerText = toRelativeTime(date)
+    timestamp.innerText = `${toRelativeTime(date) } at ${toReadableTime(date)}`
   }
 
   get link() { return this.post.querySelector('[data-post=link]') }

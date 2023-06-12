@@ -1,14 +1,20 @@
+function toReadableTime(date) {
+  const formatter = new Intl.DateTimeFormat('en-US', { timeStyle: 'short' })
+  return formatter.format(new Date(date))
+}
+
 function toRelativeTime(date) {
-  const formatter = new Intl.RelativeTimeFormat('en-us', { style: 'short' })
+  const formatter = new Intl.RelativeTimeFormat('en-us', { style: 'long', numeric: "auto" })
   const dateNow = new Date()
 
   const diff = getDifferenceBetweenDates(dateNow, date)
   const max = __getMax(diff)
 
-  return formatter.format(max.value, max.key)
+  return formatter.format(Math.ceil(diff.days), 'days')
+  //return formatter.format(Math.ceil(max.value), max.key)
 }
 
-function getDifferenceBetweenDates(present, past) {
+function getDifferenceBetweenDates(past, present) {
   const diffTime = present - past
   const minutes = 1000 * 60
   const hours = minutes * 60
@@ -46,4 +52,4 @@ function __getMax(difference) {
  * @property {number} weeks
  */
 
-export { toRelativeTime }
+export { toRelativeTime, toReadableTime }

@@ -6,6 +6,11 @@
   border               : 1px solid hsl(var(--bg-default));
   padding              : var(--space-xs);
 
+  .post a[data-post="username"]::before,
+  .username::before {
+    content: 'u/attr';
+  }
+
   &__votes {
     grid-column   : 1/2;
     grid-row      : 1/3;
