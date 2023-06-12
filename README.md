@@ -1,5 +1,5 @@
-# eleventy-template
-Base project for eleventy websites
+# lemmy-frontend
+Yet another custom front end for Lemmy.
 
 ## Configuration
 
