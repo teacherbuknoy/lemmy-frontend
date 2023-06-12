@@ -1,5 +1,6 @@
 const { LemmyClient } = require('./lemmy/index')
 const { UICommunity } = require('./ui/community')
+const { UIPost } = require('./ui/post')
 const { render, fixHeadings } = require('./ui/markdown')
 
 const communityArticle = document.querySelector('article[data-community=article]')
@@ -55,7 +56,31 @@ async function initializeCommunity(communityData) {
     article.title = community.title
     article.description = fixHeadings(render(community.description), 2)
     article.article.removeAttribute('hidden')
-    
-    console.log(article.description)
+    article.posts = await getCommunityPosts(article.communityId)
   }
+}
+
+/**
+ * @description Fetches and renders posts of a community
+ * @author Francis Rubio
+ * @param {number} number the community ID
+ * @returns {UIPost[]}
+ */
+async function getCommunityPosts(communityId) {
+  const posts = await client.communities.getPostsByCommunity(communityId)
+  return posts.map(post => __createUIPost(post))
+}
+
+function __createUIPost(thread) {
+  const { counts, post, creator, community } = thread
+  const uiPost = new UIPost(document.getElementById('tmpl-post'))
+  uiPost.comments = counts.comments
+  uiPost.link = `/post/?id=${post.id}`
+  uiPost.postId = post.id
+  uiPost.timestamp = post.published
+  uiPost.username = creator.name
+  uiPost.votes = counts.score
+  uiPost.title = post.name
+
+  return uiPost.post
 }

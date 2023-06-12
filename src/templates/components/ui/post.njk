@@ -1,0 +1,45 @@
+<template id="tmpl-post">
+  <article class="post" data-post-id="">
+    <header class="post__header">
+      <p class="post__meta">
+        Posted by <a href="/user/decadentrebel" data-post="username">decadentrebel</a>
+        <time data-post="timestamp">5 mins ago</time>
+      </p>
+      <h2 class="post__title">
+        <a href="/post/?id=123" data-post="link">Tara kain Pancit Canton!</a>
+      </h2>
+    </header>
+    <div class="post__votes">
+      <button class="button upvote button--transparent" data-post="upvote" data-post-id="">
+        {% set feathericon = "arrow-up" %}
+        {% include "ui/feathericon.njk" %}
+        <span class="sr-only">Upvote</span>
+      </button>
+      <span class="post__votes-count" data-post="votes">6</span>
+      <button class="button downvote button--transparent" data-post="downvote" data-post-id>
+        {% set feathericon = "arrow-down" %}
+        {% include "ui/feathericon.njk" %}
+        <span class="sr-only">Downvote</span>
+      </button>
+    </div>
+    <footer class="post__actions">
+      <a href="/post/?id=123" class="button button--transparent" data-post="commentLink">
+        {% set feathericon = 'message-square' %}
+        {% include "ui/feathericon.njk" %}
+        <span data-post="comments">0 comments</span>
+      </a>
+
+      <button class="button button--transparent" data-post="share">
+        {% set feathericon = 'share-2' %}
+        {% include "ui/feathericon.njk" %}
+        <span>Share</span>
+      </button>
+
+      <button class="button button--transparent" data-post="save">
+        {% set feathericon = 'bookmark' %}
+        {% include "ui/feathericon.njk" %}
+        <span>Save</span>
+      </button>
+    </footer>
+  </article>
+</template>

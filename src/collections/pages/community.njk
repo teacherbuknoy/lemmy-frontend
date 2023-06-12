@@ -28,7 +28,10 @@ scripts:
       <h1 data-community="title" class="h1 community__title">Philippines</h1>
     </div>
     <div class="sidebar-layout">
-      <div data-community="posts" class="sidebar__main"></div>
+      <div class="sidebar__main">
+        {% include "ui/post.njk" %}
+        <div class="community__posts" data-community="posts"></div>
+      </div>
       <div class="sidebar__aside">
         <div class="community__description">
           <h2 class="community__section-title">Description</h2>

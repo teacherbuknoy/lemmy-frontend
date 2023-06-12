@@ -9,6 +9,7 @@
   font-family     : var(--font-sans);
   font-size       : var(--type-size);
   font-weight     : bold;
+  gap             : 1ch;
   justify-content : center;
   padding-block   : var(--space-xs);
   padding-inline  : var(--space);
@@ -32,6 +33,10 @@
       background-color: hsl(var(--primary-700));
       color           : hsl(var(--fg-invert-contrast));
     }
+  }
+
+  &--transparent {
+    background-color: transparent;
   }
 
 }

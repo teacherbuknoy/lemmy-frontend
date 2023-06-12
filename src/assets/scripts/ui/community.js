@@ -36,9 +36,25 @@ class UICommunity {
   set title(value) { this.elements.title.innerText }
 
   get posts() { return this.elements.posts }
+  set posts(value) {
+    console.log("ADDING NEW POSTS")
+    removeChildren(this.elements.posts)
+    if (value != null && value instanceof Array) {
+      value.forEach(post => {
+        this.elements.posts.appendChild(post)
+      })
+    }
+  }
   
   get description() { return this.elements.description.innerHTML }
   set description(value) { this.elements.description.innerHTML = value }
+}
+
+/** @param {HTMLElement} node */
+function removeChildren(node) {
+  while (node.lastChild != null) {
+    node.removeChild(node.lastChild)
+  }
 }
 
 export { UICommunity }

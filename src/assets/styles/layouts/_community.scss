@@ -71,4 +71,23 @@
       font-size: var(--vtype-size-6);
     }
   }
+
+  &__posts {
+    display       : flex;
+    flex-direction: column;
+
+    .post+.post {
+      border-top: 0;
+    }
+
+    .post:not(:first-child) {
+      border-top-right-radius: 0;
+      border-top-left-radius : 0;
+    }
+
+    .post:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius : 0;
+    }
+  }
 }
