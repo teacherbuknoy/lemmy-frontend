@@ -1,13 +1,19 @@
 <nav class="navigation-bar" aria-labelledby="nav-title">
-  <ul class="navigation-list">
-    {% for item in navigation %}
-      {% if item.isTitle %}
-        <li id="nav-title" hidden>{{ item.text }}</li>
-      {% else %}
-        <li class="navigation-list-item">
-          <a class="navigation-link" href="{{ item.url }}">{{ item.text }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  {% for set in navigation %}
+    <ul class="navigation-list">
+      {% for item in set %}
+        {% if item.isTitle %}
+          <li id="nav-title" hidden>{{ item.text }}</li>
+        {% elif item.action %}
+          <li class="navigation-list-item" data-auth="{{ item.auth }}">
+            <button class="navigation-link" data-dialog="{{ item.action }}">{{ item.text }}</button>
+          </li>
+        {% else %}
+          <li class="navigation-list-item">
+            <a class="navigation-link" href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </nav>
