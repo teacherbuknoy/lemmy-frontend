@@ -1,0 +1,7 @@
+.h {
+  @for $level from 1 through 6 {
+    &#{$level} {
+      font-size: var(--type-size-#{$level});
+    }
+  }
+}

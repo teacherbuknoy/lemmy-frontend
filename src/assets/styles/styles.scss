@@ -4,6 +4,9 @@
 
 @import "components/navigation";
 
+@import "utilities/fonts";
+@import "utilities/widths";
+
 a {
   color          : hsl(var(--primary-700));
   text-decoration: none;

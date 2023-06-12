@@ -1,0 +1,15 @@
+.width {
+
+  &--page,
+  &--content {
+    margin-inline: auto;
+  }
+
+  &--page {
+    width: min(var(--page-width), 90%)
+  }
+
+  &--content {
+    width: min(var(--content-width), 90%)
+  }
+}

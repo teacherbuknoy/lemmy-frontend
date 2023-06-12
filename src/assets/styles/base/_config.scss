@@ -78,27 +78,34 @@
   --font-sans     : "Inter", sans-serif;
 
   --type-size  : 1rem;
-  --type-size-1: 4.209rem;
-  --type-size-2: 3.157rem;
-  --type-size-3: 2.369rem;
-  --type-size-4: 1.777rem;
-  --type-size-5: 1.333rem;
-  --type-size-6: 1rem;
+  --type-size-1: 2.986rem;
+  --type-size-2: 2.488rem;
+  --type-size-3: 2.074rem;
+  --type-size-4: 1.728rem;
+  --type-size-5: 1.44rem;
+  --type-size-6: 1.2rem;
   --type-size-7: 0.75rem;
   --type-size-8: 0.563rem;
   --type-size-9: 0.422rem;
 
   // relative type sizes us em instead of rem
   --type-size-rel  : 1em;
-  --type-size-rel-1: 4.209em;
-  --type-size-rel-2: 3.157em;
-  --type-size-rel-3: 2.369em;
-  --type-size-rel-4: 1.777em;
-  --type-size-rel-5: 1.333em;
-  --type-size-rel-6: 1em;
+  --type-size-rel-1: 2.986em;
+  --type-size-rel-2: 2.488em;
+  --type-size-rel-3: 2.074em;
+  --type-size-rel-4: 1.728em;
+  --type-size-rel-5: 1.44em;
+  --type-size-rel-6: 1.2em;
   --type-size-rel-7: 0.75em;
   --type-size-rel-8: 0.563em;
   --type-size-rel-9: 0.422em;
+
+  --vtype-size-1: clamp(var(--type-size-2), 5vw + 1rem, var(--type-size-1));
+  --vtype-size-2: clamp(var(--type-size-3), 5vw + 1rem, var(--type-size-2));
+  --vtype-size-3: clamp(var(--type-size-4), 5vw + 1rem, var(--type-size-3));
+  --vtype-size-4: clamp(var(--type-size-5), 2vw + 1rem, var(--type-size-4));
+  --vtype-size-5: clamp(var(--type-size-6), 2vw + 1rem, var(--type-size-5));
+  --vtype-size-6: clamp(var(--type-size), 2vw + 1rem, var(--type-size-6));
 }
 
 /* SIZES */

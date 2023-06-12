@@ -4,6 +4,7 @@
     background-color: hsl(var(--primary-100) / 75%);
     border-radius   : var(--radius-3);
     display         : flex;
+    flex-wrap       : wrap;
     margin-block    : var(--space-xs);
     margin-inline   : auto;
     padding         : var(--space-xxs);
@@ -22,9 +23,11 @@
     align-items    : center;
     display        : flex;
     flex           : 1;
+    flex-wrap      : wrap;
     gap            : 1ch;
     justify-content: center;
     margin         : 0;
+    flex-basis     : 20ch;
 
     &:first-child {
       justify-content: start;
