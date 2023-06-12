@@ -3,6 +3,10 @@
 @import "base/config";
 @import "base/theme";
 
+@import "layouts/community";
+@import "layouts/sidebar";
+@import "layouts/stack";
+
 @import "components/navigation";
 @import "components/form";
 @import "components/button";

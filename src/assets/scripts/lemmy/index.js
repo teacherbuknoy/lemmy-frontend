@@ -14,14 +14,14 @@ class LemmyClient {
   }
 
   async login(form = { usernameOrEmail, password }) {
-    const endpoint = new URL(`${window.location}.netlify/functions/lemmy-login`)
+    const endpoint = new URL(`${window.location.origin}/.netlify/functions/lemmy-login`)
     endpoint.searchParams.append('usernameOrEmail', form.usernameOrEmail)
     endpoint.searchParams.append('password', form.password)
     endpoint.searchParams.append('instanceUrl', this.instanceUrl)
 
 
-    console.info("[LOGIN]", 'Sending login request')
-    const auth = await fetch(endpoint.toString()).then(response => response.json())
+    console.info("[LOGIN]", 'Sending login request', endpoint.toString())
+    const auth = await fetch(endpoint.toString()).then(response => response.json()).catch(e => console.error(e))
     this.#jwt = auth.jwt
     
     this.#initializeComponents()

@@ -57,3 +57,26 @@
     }
   }
 }
+
+.loader:not([hidden]) {
+  min-height : 20vw;
+  display    : grid;
+  place-items: center;
+
+  &::before {
+    --size          : 5ch;
+    animation       : loading 1000ms ease infinite;
+    border          : 5px solid transparent;
+    border-radius   : 100%;
+    border-top-color: hsl(var(--primary-500));
+    content         : "";
+    height          : var(--size);
+    width           : var(--size);
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg)
+  }
+}

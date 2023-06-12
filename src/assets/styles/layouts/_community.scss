@@ -1,0 +1,74 @@
+.community {
+  display       : flex;
+  flex-direction: column;
+  margin-block  : var(--space-l);
+
+  &[hidden] {
+    display: none;
+  }
+
+  &__banner {
+    border-radius: var(--radius-5);
+  }
+
+  &__header {
+    display         : flex;
+    align-items     : center;
+    gap             : 3ch;
+    margin-top      : -2.5ch;
+    padding-inline  : 2.5ch;
+    margin-block-end: var(--space-l);
+  }
+
+  &__icon {
+    aspect-ratio : 1/1;
+    width        : auto;
+    height       : 100px;
+    border-radius: 100%;
+    outline      : 5px solid hsl(var(--bg-contrast));
+    box-shadow   : 0 4px 16px #0005;
+  }
+
+  &__title {
+    margin     : 0;
+    padding-top: 1.5rem;
+    font-size  : var(--vtype-size-2);
+  }
+
+  &__section-title {
+    font-size     : var(--type-size);
+    font-weight   : 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin        : 0;
+  }
+
+  &__description {
+    @extend .stack;
+    background-color: hsl(var(--bg-default) / 25%);
+    padding         : var(--space);
+    border-radius   : var(--radius-5);
+    border          : 1px solid hsl(var(--bg-default));
+
+    :where(h3, h4, h5, h6):not([class]) {
+      margin            : 0;
+      margin-block-start: 1ch;
+    }
+
+    h3:not([class]) {
+      font-size: var(--vtype-size-3);
+    }
+
+    h4:not([class]) {
+      font-size: var(--vtype-size-4);
+    }
+
+    h5:not([class]) {
+      font-size: var(--vtype-size-5);
+    }
+
+    h6:not([class]) {
+      font-size: var(--vtype-size-6);
+    }
+  }
+}

@@ -8,7 +8,7 @@ class Communities {
     this.instanceUrl = instanceUrl
     this.version = version
 
-    this.endpoint = `${window.location}.netlify/functions/getCommunity`
+    this.endpoint = `${window.location.origin}/.netlify/functions/getCommunity`
     this.#auth = auth
   }
 
