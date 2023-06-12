@@ -1,0 +1,59 @@
+.form {
+  &-control {
+    align-items         : center;
+    background-color    : hsl(var(--bg-contrast));
+    border              : 1px solid hsl(var(--bg-subtle));
+    border-radius       : var(--radius-2);
+    display             : inline-flex;
+    gap                 : 1ch;
+    overflow            : hidden;
+    padding-inline-start: var(--space-xs);
+    transition          : 200ms;
+
+    &:has(.button--primary) {
+      border-color: hsl(var(--primary-500));
+
+      .feather {
+        stroke: hsl(var(--primary-500))
+      }
+    }
+
+    &:focus-within {
+      @include focus-ring-style();
+      border-color: hsl(var(--primary-300));
+
+      .feather {
+        stroke      : hsl(var(--primary-500));
+        stroke-width: 4px
+      }
+
+      .button {
+        outline-offset: -5px;
+        outline-width : 2px;
+      }
+    }
+
+    & & {
+      flex                : 1;
+      font-size           : 1em;
+      padding             : var(--space-xxs) var(--space-s);
+      font-family         : var(--font-sans);
+      border              : 0;
+      padding-inline-start: 0;
+
+      &:focus,
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .feather {
+      margin    : 0.25ch;
+      transition: 300ms;
+    }
+
+    .button {
+      border-radius: 0;
+    }
+  }
+}

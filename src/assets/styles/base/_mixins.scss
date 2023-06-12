@@ -1,0 +1,13 @@
+@mixin focus-ring() {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    @include focus-ring-style();
+  }
+}
+
+@mixin focus-ring-style() {
+  outline: 3px solid var(--focus-ring-color, hsl(var(--primary-300)));
+}

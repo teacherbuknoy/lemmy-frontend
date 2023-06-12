@@ -7,4 +7,4 @@ async function init() {
   client.communities.get('philippines').then(response => console.log(response))
 }
 
-init()
+/* init() */

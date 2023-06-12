@@ -1,11 +1,15 @@
+@import "base/mixins";
 @import "base/reset";
 @import "base/config";
 @import "base/theme";
 
 @import "components/navigation";
+@import "components/form";
+@import "components/button";
 
 @import "utilities/fonts";
 @import "utilities/widths";
+@import "utilities/visibility";
 
 a {
   color          : hsl(var(--primary-700));
@@ -17,11 +21,5 @@ a {
 }
 
 :where(a, button, input, textarea, select) {
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 3px solid hsl(var(--primary-300));
-  }
+  @include focus-ring();
 }

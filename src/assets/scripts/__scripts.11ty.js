@@ -10,6 +10,7 @@ class Script {
   constructor() {
     this.inputFiles = {
       index: 'index.js',
+      community: 'community.js',
     }
   }
 

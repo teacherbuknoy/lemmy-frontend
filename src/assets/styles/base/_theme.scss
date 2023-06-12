@@ -146,9 +146,26 @@ body {
   font-size       : var(--type-size);
 }
 
-h1 { font-size: var(--vtype-size-1); }
-h2 { font-size: var(--vtype-size-2); }
-h3 { font-size: var(--vtype-size-3); }
-h4 { font-size: var(--vtype-size-4); }
-h5 { font-size: var(--vtype-size-5); }
-h6 { font-size: var(--vtype-size-6); }
+h1 {
+  font-size: var(--vtype-size-1);
+}
+
+h2 {
+  font-size: var(--vtype-size-2);
+}
+
+h3 {
+  font-size: var(--vtype-size-3);
+}
+
+h4 {
+  font-size: var(--vtype-size-4);
+}
+
+h5 {
+  font-size: var(--vtype-size-5);
+}
+
+h6 {
+  font-size: var(--vtype-size-6);
+}

@@ -8,5 +8,8 @@
   {% endblock %}
 
   <script src="/assets/scripts/index.js" type="module"></script>
+  {% for script in scripts %}
+    <script src="/assets/scripts/{{ script }}" type="module"></script>
+  {% endfor %}
 </body>
 </html>
