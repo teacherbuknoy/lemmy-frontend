@@ -1,1 +1,24 @@
 @import "base/reset";
+@import "base/config";
+@import "base/theme";
+
+@import "components/navigation";
+
+a {
+  color          : hsl(var(--primary-700));
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+:where(a, button, input, textarea, select) {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid hsl(var(--primary-300));
+  }
+}

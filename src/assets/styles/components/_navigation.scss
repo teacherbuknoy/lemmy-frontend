@@ -1,0 +1,39 @@
+.navigation {
+  &-bar {
+    backdrop-filter : blur(75px);
+    background-color: hsl(var(--primary-100) / 75%);
+    border-radius   : var(--radius-3);
+    margin-block    : var(--space-xs);
+    margin-inline   : auto;
+    padding         : var(--space-xxs);
+    position        : sticky;
+    top             : var(--space-xs);
+    width           : min(var(--page-width), 90%);
+    transition      : box-shadow 200ms;
+
+    &.attached {
+      --shadow-color: hsl(var(--primary-900) / 3%);
+      box-shadow    : 0 2px 4px var(--shadow-color), 0 4px 8px var(--shadow-color), 0 8px 16px var(--shadow-color), 0 16px 32px var(--shadow-color);
+    }
+  }
+
+  &-list {
+    display: flex;
+    gap    : 1ch;
+    margin : 0;
+  }
+
+  &-link {
+    border-radius  : var(--radius-1);
+    display        : flex;
+    padding        : var(--space-xxxs) var(--space-s);
+    text-decoration: none !important;
+    transition     : background 200ms, button 200ms;
+
+    &:hover {
+      @extend .theme-dark;
+      color           : hsl(var(--primary-100));
+      background-color: hsl(var(--primary-700) / 50%);
+    }
+  }
+}

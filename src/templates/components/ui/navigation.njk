@@ -1,0 +1,13 @@
+<nav class="navigation-bar" aria-labelledby="nav-title">
+  <ul class="navigation-list">
+    {% for item in navigation %}
+      {% if item.isTitle %}
+        <li id="nav-title" hidden>{{ item.text }}</li>
+      {% else %}
+        <li class="navigation-list-item">
+          <a class="navigation-link" href="{{ item.url }}">{{ item.text }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

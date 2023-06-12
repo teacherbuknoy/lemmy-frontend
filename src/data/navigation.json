@@ -1,3 +1,5 @@
 [
-  { "text": "Writing", "url": "/writing/" }
+  { "text": "Primary navigation", "isTitle": true },
+  { "text": "Home", "url": "/" },
+  { "text": "Communities", "url": "/communities" }
 ]

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 {% include "head/head.njk" %}
-<body>
+<body class="theme-light">
+  {% include 'ui/navigation.njk' %}
   {% block content %}
     {{ content | safe }}
   {% endblock %}
